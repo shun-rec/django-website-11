@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,11 @@ SECURE_SSL_REDIRECT = True
 AUTH_USER_MODEL = 'registration.User'
 
 FRONTEND_URL = "https://localhost-shundev-1.paiza-user-free.cloud:8000"
+
+ANYMAIL = {
+    "MAILGUN_API_KEY": "bcd3964b466d257e6015c9bd6cec1428-2fbe671d-6564da7c",
+    "MAILGUN_SENDER_DOMAIN": 'sandboxde49fd818f544f5fa111b580f9fc860f.mailgun.org',
+}
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+DEFAULT_FROM_EMAIL = "hondo@example.com"
+SERVER_EMAIL = "server@example.com"
